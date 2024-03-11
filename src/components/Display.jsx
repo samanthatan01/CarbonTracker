@@ -17,8 +17,6 @@ const Display = () => {
         }
       );
 
-      // bearer secret token for airtable > postman: pat1pbGlSKhsXSxPI.e9462d87faf02f90a9321505b06980ae23cd446365bcacf09d2099a667a19cd6
-
       if (res.ok) {
         const data = await res.json();
         setVehModel(data);
