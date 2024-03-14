@@ -14,7 +14,7 @@ const NavBar = () => {
               }}
               to="/main"
             >
-              Main
+              Methodology
             </NavLink>
           </li>
           <li>
@@ -24,7 +24,7 @@ const NavBar = () => {
               }}
               to="/member/list"
             >
-              Login
+              Login / Sign Up
             </NavLink>
           </li>
         </ul>

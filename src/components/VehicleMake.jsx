@@ -6,14 +6,14 @@ const VehicleMake = (props) => {
   });
 
   return (
-    <div className="row">
+    <>
       <select
-        className="col-sm-6"
+        className="col-sm-3"
         // onChange={(event) => props.setVehModel(event.target.value)}
       >
         {vehSelection}
       </select>
-    </div>
+    </>
   );
 };
 
