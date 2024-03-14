@@ -164,6 +164,7 @@ const Member = () => {
                   date: date,
                   vehicle: data.data.attributes.vehicle_make,
                   vehModel: data.data.attributes.vehicle_model,
+                  vehModelId: data.data.attributes.vehicle_model_id,
                   distance_value: data.data.attributes.distance_value,
                   carbon_kg: data.data.attributes.carbon_kg,
                 },
@@ -175,7 +176,7 @@ const Member = () => {
       if (res.ok) {
         const data2 = await res.json();
         console.log(data2);
-        // getEntries();
+        getEntries();
       }
     } catch (error) {
       console.log(error.message);
