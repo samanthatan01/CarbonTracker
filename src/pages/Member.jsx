@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import Form from "../components/Form";
 import Display from "../components/Display";
@@ -12,10 +12,8 @@ const Member = () => {
   const [vehModel, setVehModel] = useState([]);
   const [vehModelId, setVehModelId] = useState("");
   const [distance, setDistance] = useState();
-  const [formSubmission, setFormSubmission] = useState([]);
-  const [estimatesData, setEstimatesData] = useState([]);
-  const [type, setType] = useState("vehicle");
-  const [distanceUnit, setDistanceUnit] = useState("km");
+  const type = "vehicle";
+  const distanceUnit = "km";
 
   // GET vehicle make data -- car name and id
   const getVehicleData = async (signal) => {
@@ -106,24 +104,18 @@ const Member = () => {
 
   // store the updated states from the form submission entry into a consolidated state to pass on to the next async function
   const submitEntry = () => {
-    // setFormSubmission({
-    //   date,
-    //   vehMakeId,
-    //   vehModelId,
-    //   distance,
-    // });
+    getVehdata();
+  };
 
-    getVehEstimatesData();
+  const clearEntry = () => {
     setDate("");
     setVehMakeId("");
     setVehModelId("");
     setDistance("");
   };
 
-  // console.log(formSubmission);
-
   // POST -- get vehicle emission estimates
-  const getVehEstimatesData = async () => {
+  const getVehdata = async () => {
     const res = await fetch(
       import.meta.env.VITE_CARBON_API_SERVER + "/estimates",
       {
@@ -143,43 +135,52 @@ const Member = () => {
 
     if (res.ok) {
       const data = await res.json();
-      setEstimatesData(data);
+      console.log(data);
+
+      // updateEntryRef(data);
+      addVehEstimatesEntry(data);
+      setDate("");
+      setVehMakeId("");
+      setVehModelId("");
+      setDistance("");
     }
   };
 
-  // PUT -- add getVehEstimatesData response body into airtable
-  // const addVehEstimatesEntry = async (estimatesData) => {
-  //   const res = await fetch(
-  //     import.meta.env.VITE_AIRTABLE_SERVER + "/vehicle-estimate-response",
-  //     {
-  //       method: "POST",
-  //       headers: {
-  //         Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_KEY}`,
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         vehMakeId: estimatesData.data.id,
-  //         distance_value: estimatesData.data.attributes.distance_value,
-  //         vehicle: estimatesData.data.attributes.vehicle_make,
-  //         vehModel: estimatesData.data.attributes.vehicle_model,
-  //         vehModelId: estimatesData.data.attributes.vehicle_model_id,
-  //         carbon_kg: estimatesData.data.attributes.carbon_kg,
-  //       }),
-  //     }
-  //   );
-
-  //   if (res.ok) {
-  //     const data = await res.json();
-  //     getEntries();
-  //     setEstimatesData("");
-
-  //     // to reset only when the request data has been stored in airtable
-  //     // setDate("");
-  //     // setVehicle([]);
-  //     // setVehModel([]);
-  //     // setDistance("");
-  //   }
-  // };
+  // PUT -- add getVehdata response body into airtable
+  const addVehEstimatesEntry = async (data) => {
+    try {
+      const res = await fetch(
+        import.meta.env.VITE_AIRTABLE_SERVER + "/vehicle-estimate-response",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            records: [
+              {
+                fields: {
+                  date: date,
+                  vehicle: data.data.attributes.vehicle_make,
+                  vehModel: data.data.attributes.vehicle_model,
+                  distance_value: data.data.attributes.distance_value,
+                  carbon_kg: data.data.attributes.carbon_kg,
+                },
+              },
+            ],
+          }),
+        }
+      );
+      if (res.ok) {
+        const data2 = await res.json();
+        console.log(data2);
+        // getEntries();
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <>
@@ -193,21 +194,16 @@ const Member = () => {
             <Form
               vehMakeSelection={vehMakeSelection}
               vehModelSelection={vehModelSelection}
-              vehicle={vehicle}
-              setVehicle={setVehicle}
               vehMakeId={vehMakeId}
               setVehMakeId={setVehMakeId}
               date={date}
               setDate={setDate}
               distance={distance}
               setDistance={setDistance}
-              vehModel={vehModel}
-              setVehModel={setVehModel}
               vehModelId={vehModelId}
               setVehModelId={setVehModelId}
               submitEntry={submitEntry}
-
-              // getVehEstimatesData={getVehEstimatesData}
+              clearEntry={clearEntry}
             ></Form>
           </div>
         </div>
