@@ -187,7 +187,7 @@ const Member = () => {
       <div className="container">
         <br />
         <div className="row">
-          <h3>Log New Entry</h3>
+          <h3 style={{ color: "#77a677" }}>Log New Entry</h3>
           <br />
           <br />
           <div>
@@ -209,11 +209,20 @@ const Member = () => {
         </div>
 
         <br />
-        <br />
+        <div>
+          <hr
+            style={{
+              background: "#77a677",
+              color: "#77a677",
+              borderColor: "#77a677",
+              height: "2px",
+            }}
+          />
+        </div>
         <br />
 
         <div className="row">
-          <h3>Past Entries and Total Activity</h3>
+          <h3 style={{ color: "#77a677" }}>Past Entries and Total Activity</h3>
           <br />
           <div>
             <Display></Display>
