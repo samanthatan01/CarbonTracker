@@ -12,6 +12,7 @@ const Member = () => {
   const [vehModel, setVehModel] = useState([]);
   const [vehModelId, setVehModelId] = useState("");
   const [distance, setDistance] = useState();
+  const [entries, setEntries] = useState([]);
   const type = "vehicle";
   const distanceUnit = "km";
 
@@ -137,7 +138,6 @@ const Member = () => {
       const data = await res.json();
       console.log(data);
 
-      // updateEntryRef(data);
       addVehEstimatesEntry(data);
       setDate("");
       setVehMakeId("");
@@ -182,11 +182,72 @@ const Member = () => {
     }
   };
 
+  // GET entries from airtable to display on app
+  const getEntries = async (signal) => {
+    try {
+      const res = await fetch(
+        import.meta.env.VITE_AIRTABLE_SERVER + "/vehicle-estimate-response",
+        {
+          signal,
+          headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_KEY}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (res.ok) {
+        const data = await res.json();
+        setEntries(data);
+      }
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        console.log(error.message);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const controller = new AbortController();
+    getEntries(controller.signal);
+
+    return () => {
+      controller.abort();
+    };
+  }, []);
+
+  console.log(entries);
+
   return (
     <>
       <div className="container">
         <br />
         <div className="row">
+          <br />
+          <div className="row">
+            <h3 style={{ color: "#77a677" }}>Carbon Emission Overview</h3>
+            <br />
+            <br />
+            <div>
+              <label>Emission Dashboard</label>
+            </div>
+          </div>
+
+          <br />
+          <br />
+          <br />
+
+          <div>
+            <hr
+              style={{
+                background: "#77a677",
+                color: "#77a677",
+                borderColor: "#77a677",
+                height: "2px",
+              }}
+            />
+          </div>
+
           <h3 style={{ color: "#77a677" }}>Log New Entry</h3>
           <br />
           <br />
@@ -219,15 +280,20 @@ const Member = () => {
             }}
           />
         </div>
+
         <br />
 
         <div className="row">
-          <h3 style={{ color: "#77a677" }}>Past Entries and Total Activity</h3>
+          <h3 style={{ color: "#77a677" }}>Past Entries</h3>
+          <br />
           <br />
           <div>
-            <Display></Display>
+            <Display entries={entries} getEntries={getEntries}></Display>
           </div>
         </div>
+
+        <br />
+        <br />
       </div>
     </>
   );
