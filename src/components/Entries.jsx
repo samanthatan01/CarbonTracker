@@ -9,6 +9,7 @@ const Entries = (props) => {
     <>
       {showUpdateModal && (
         <UpdateModal
+          id={props.id}
           date={props.date}
           vehicle={props.vehicle}
           vehModel={props.vehModel}

@@ -3,7 +3,7 @@ import Entries from "./Entries";
 import styles from "./Entries.module.css";
 
 const Display = (props) => {
-  // console.log(props.entries);
+  console.log(props.entries);
 
   return (
     <>
@@ -21,6 +21,7 @@ const Display = (props) => {
       {props.entries?.records?.map((item) => {
         return (
           <Entries
+            id={item.id}
             date={item.fields.date}
             vehicle={item.fields.vehicle}
             vehModel={item.fields.vehModel}
