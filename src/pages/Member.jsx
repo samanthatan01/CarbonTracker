@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import Form from "../components/Form";
 import Display from "../components/Display";
+import Overview from "../components/Overview";
 
 const Member = () => {
   // setting states, params and variables
@@ -229,9 +230,7 @@ const Member = () => {
             <h3 style={{ color: "#77a677" }}>Carbon Emission Overview</h3>
             <br />
             <br />
-            <div>
-              <label>Emission Dashboard</label>
-            </div>
+            <Overview></Overview>
           </div>
 
           <br />
