@@ -248,8 +248,9 @@ const Member = () => {
               }}
             />
           </div>
-
+          <br />
           <h3 style={{ color: "#35423b" }}>Log New Entry</h3>
+          <br />
           <br />
           <br />
           <div>

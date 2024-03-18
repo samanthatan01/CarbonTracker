@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Overview.module.css";
 
 const Overview = (props) => {
   let totalDistance = 0;
@@ -10,12 +11,32 @@ const Overview = (props) => {
   });
 
   return (
-    <div>
-      <h6>Emission Dashboard</h6>
-
-      <label>{`Total Distance Travelled (in km) : ${totalDistance} `} </label>
+    <div className="container">
       <br />
-      <label>{`Total Carbon Emitted (in kg) : ${totalCarbon}`}</label>
+      <div className="row">
+        <label className={`${styles.overviewlabel}`}>
+          Total Distance Travelled
+        </label>
+        <br />
+        <br />
+        <label className={`${styles.overviewnumber}`}>
+          {`${totalDistance} KM`}{" "}
+        </label>
+      </div>
+
+      <br />
+
+      <div className="row">
+        <label className={`${styles.overviewlabel}`}>
+          Total Carbon Emitted
+        </label>
+        <br />
+        <br />
+        <label
+          className={`${styles.overviewnumber}`}
+        >{`${totalCarbon} KG`}</label>
+      </div>
+      <br />
     </div>
   );
 };
