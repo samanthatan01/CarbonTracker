@@ -1,11 +1,8 @@
 import React from "react";
 import Entries from "./Entries";
-// import styles from "./Entries.module.css";
 import "./styles.css";
 
 const Display = (props) => {
-  // console.log(props.entries);
-
   return (
     <>
       <div className="row entry">
@@ -26,8 +23,6 @@ const Display = (props) => {
         </div>
         <div className="col-sm-2"></div>
       </div>
-
-      {/* {JSON.stringify(props.entries?.records)} */}
 
       {props.entries?.records?.map((item) => {
         return (

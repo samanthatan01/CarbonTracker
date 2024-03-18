@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import styles from "./Entries.module.css";
 import "./styles.css";
 import UpdateModal from "./UpdateModal";
 
@@ -8,7 +7,6 @@ const Entries = (props) => {
 
   return (
     <>
-      {/* {JSON.stringify(props.vehModelIdOfEntry)} */}
       {showUpdateModal && (
         <UpdateModal
           id={props.id}

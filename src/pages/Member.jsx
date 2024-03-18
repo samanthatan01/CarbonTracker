@@ -289,7 +289,7 @@ const Member = () => {
 
           <br />
           <br />
-          {/* {JSON.stringify(vehModelId)} */}
+
           <div>
             <Display
               entries={entries}

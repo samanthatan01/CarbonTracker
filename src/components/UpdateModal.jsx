@@ -59,12 +59,6 @@ const Overlay = (props) => {
     );
   });
 
-  // console.log(type);
-  // console.log(distanceUnit);
-  // console.log(distance);
-  // console.log(vehModelId);
-  // console.log(entryId);
-
   const getUpdatedVehData = async () => {
     const res = await fetch(
       import.meta.env.VITE_CARBON_API_SERVER + "/estimates",
@@ -138,7 +132,7 @@ const Overlay = (props) => {
     const selectedEntry = props.entries?.records?.find(
       (element) => element.id == props.id
     );
-    // console.log(selectedEntry.fields.vehMakeId);
+
     setDate(selectedEntry.fields.date);
     setVehicle(selectedEntry.fields.vehicle);
     setDistance(selectedEntry.fields.distance_value);
@@ -150,13 +144,6 @@ const Overlay = (props) => {
 
       <div className={styles.modal}>
         <br />
-        {/* {JSON.stringify(entryId)} */}
-        {/* <br />
-        {JSON.stringify(vehModelId)}
-        <br />
-        {JSON.stringify(vehMakeId)}
-        <br />
-        {JSON.stringify(distance)} */}
 
         <br />
         <div className="row">
