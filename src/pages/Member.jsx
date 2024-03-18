@@ -288,6 +288,7 @@ const Member = () => {
           <h3 style={{ color: "#77a677" }}>Past Entries</h3>
           <br />
           <br />
+          {/* {JSON.stringify(vehModelId)} */}
           <div>
             <Display
               entries={entries}

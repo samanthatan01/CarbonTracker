@@ -4,11 +4,14 @@ import styles from "./Modal.module.css";
 
 const Overlay = (props) => {
   const [date, setDate] = useState("");
-  const [vehMakeId, setVehMakeId] = useState("");
-  const [vehModelId, setVehModelId] = useState("");
+  const [entryId, setEntryId] = useState(props.id);
+  const [vehMakeId, setVehMakeId] = useState(props.vehMakeIdOfEntry);
+  const [vehModelId, setVehModelId] = useState(props.vehModelIdOfEntry);
   const [distance, setDistance] = useState();
   const [vehicle, setVehicle] = useState([]);
   const [vehModel, setVehModel] = useState([]);
+  const type = "vehicle";
+  const distanceUnit = "km";
 
   useEffect(() => {
     if (vehMakeId.length !== 0) {
@@ -56,11 +59,86 @@ const Overlay = (props) => {
     );
   });
 
+  // console.log(type);
+  // console.log(distanceUnit);
+  // console.log(distance);
+  // console.log(vehModelId);
+  // console.log(entryId);
+
+  const getUpdatedVehData = async () => {
+    const res = await fetch(
+      import.meta.env.VITE_CARBON_API_SERVER + "/estimates",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_CARBON_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: type,
+          distance_unit: distanceUnit,
+          distance_value: distance,
+          vehicle_model_id: vehModelId,
+        }),
+      }
+    );
+
+    if (res.ok) {
+      const data = await res.json();
+      console.log(data);
+
+      updateVehEstimatesEntry(data);
+      props.setShowUpdateModal(false);
+      setDate("");
+      setVehMakeId("");
+      setVehModelId("");
+      setDistance("");
+    }
+  };
+
+  const updateVehEstimatesEntry = async (data) => {
+    try {
+      const res = await fetch(
+        import.meta.env.VITE_AIRTABLE_SERVER + "/vehicle-estimate-response",
+        {
+          method: "PATCH",
+          headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            records: [
+              {
+                id: entryId,
+                fields: {
+                  date: date,
+                  vehicle: data.data.attributes.vehicle_make,
+                  vehModel: data.data.attributes.vehicle_model,
+                  vehMakeId: data.data.id,
+                  vehModelId: data.data.attributes.vehicle_model_id,
+                  distance_value: data.data.attributes.distance_value,
+                  carbon_kg: data.data.attributes.carbon_kg,
+                },
+              },
+            ],
+          }),
+        }
+      );
+      if (res.ok) {
+        const data2 = await res.json();
+        console.log(data2);
+        props.getEntries();
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   useEffect(() => {
     const selectedEntry = props.entries?.records?.find(
       (element) => element.id == props.id
     );
-    console.log(selectedEntry.fields.vehMakeId);
+    // console.log(selectedEntry.fields.vehMakeId);
     setDate(selectedEntry.fields.date);
     setVehicle(selectedEntry.fields.vehicle);
     setDistance(selectedEntry.fields.distance_value);
@@ -68,10 +146,12 @@ const Overlay = (props) => {
 
   return (
     <div className={styles.backdrop}>
+      {JSON.stringify(props.vehModelId)}
+
       <div className={styles.modal}>
         <br />
-        {/* {JSON.stringify(date)}
-        <br />
+        {/* {JSON.stringify(entryId)} */}
+        {/* <br />
         {JSON.stringify(vehModelId)}
         <br />
         {JSON.stringify(vehMakeId)}
@@ -148,7 +228,9 @@ const Overlay = (props) => {
         <br />
         <div className="row">
           <div className="col-md-3"></div>
-          <button className="col-md-3">Update</button>
+          <button className="col-md-3" onClick={getUpdatedVehData}>
+            Update
+          </button>
           <button
             className="col-md-3"
             onClick={() => props.setShowUpdateModal(false)}
@@ -182,6 +264,8 @@ const UpdateModal = (props) => {
           vehModelSelection={props.vehModelSelection}
           getVehicleModelData={props.getVehicleModelData}
           setShowUpdateModal={props.setShowUpdateModal}
+          vehMakeIdOfEntry={props.vehMakeIdOfEntry}
+          vehModelIdOfEntry={props.vehModelIdOfEntry}
         ></Overlay>,
         document.querySelector("#modal-root")
       )}

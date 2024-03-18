@@ -7,6 +7,7 @@ const Entries = (props) => {
 
   return (
     <>
+      {/* {JSON.stringify(props.vehModelIdOfEntry)} */}
       {showUpdateModal && (
         <UpdateModal
           id={props.id}
