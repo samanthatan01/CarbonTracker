@@ -1,19 +1,10 @@
-/* .row {
-  height: fit-content;
-} */
-
 .label {
   text-align: left;
 }
 
-/* input */
 .input {
-  /* position: absolute; */
   width: 270px;
   height: 32px;
-  /* left: 555px; */
-  /* top: 298px; */
-
   background: #dcdcdc;
   border-color: #ffffff;
   border-top: #ffffff;
@@ -22,15 +13,12 @@
 }
 
 .loginbutton {
-  /* position: absolute; */
   width: 180px;
   height: 32px;
-
   border-radius: 10px;
   background: #67cb67;
   border-color: #67cb67;
   border-bottom: #67cb67;
   border-right: #67cb67;
-
   color: #ffffff;
 }
