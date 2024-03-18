@@ -1,12 +1,11 @@
 import React from "react";
-import bannerimg2 from "../components/bannerimg2.jpg";
+import bannerphoto from "../components/bannerphoto.jpg";
 import styles from "../components/main.module.css";
-import { NavLink } from "react-router-dom";
 
 const Main = () => {
   return (
     <>
-      <img src={bannerimg2} alt="pollution" />
+      <img src={bannerphoto} alt="pollution" />
       <br />
       <br />
       <div className="container">
@@ -38,9 +37,13 @@ const Main = () => {
             estimates.
           </p>
           <br />
-          <NavLink className={`${styles.link}`} to="/member/list">
-            CLICK TO START TRACKING EMISSION
-          </NavLink>
+          <a
+            className={`${styles.link}`}
+            href="https://faint-class-d56.notion.site/Carbon-Interface-Methodology-d788fff61c724a48b100e0f7d77c0c57"
+          >
+            Read more about the API here
+          </a>
+          <br />
           <br />
           <br />
           <br />

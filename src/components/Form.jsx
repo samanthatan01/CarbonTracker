@@ -65,12 +65,11 @@ const Form = (props) => {
       <div className="row">
         <div className="submitform col-sm-10">
           <div className="col-sm-1"></div>
-          <button className="clearbutton col-sm-3" onClick={props.clearEntry}>
-            Clear Entry
-          </button>
-
           <button className="submitbutton col-sm-3" onClick={props.submitEntry}>
             Submit
+          </button>
+          <button className="clearbutton col-sm-3" onClick={props.clearEntry}>
+            Clear Entry
           </button>
           <div className="col-sm-1"></div>
         </div>
