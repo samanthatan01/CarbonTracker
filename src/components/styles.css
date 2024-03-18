@@ -1,0 +1,95 @@
+.label {
+  width: 240px;
+  height: 32px;
+  text-align: left;
+  align-content: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(61, 103, 75);
+}
+
+.row {
+  align-items: center;
+}
+
+.clearbutton {
+  width: 160px;
+  height: 36px;
+  margin-right: 16px;
+  border-radius: 30px;
+  background: #fc654a;
+  border-color: #fc654a;
+  border-left: #fc654a;
+  border-bottom: #fc654a;
+  border-right: #fc654a;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+}
+
+.submitbutton {
+  width: 160px;
+  height: 36px;
+  margin-right: 16px;
+  border-radius: 30px;
+  background: #67cb67;
+  border-color: #67cb67;
+  border-left: #67cb67;
+  border-bottom: #67cb67;
+  border-right: #67cb67;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+}
+
+.entry {
+  border-top: 2px solid #ecf6f1;
+}
+
+.updatebutton {
+  width: 90px;
+  height: 36px;
+  margin-right: 16px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-radius: 30px;
+  background: #275b33;
+  border-color: #275b33;
+  border-left: #275b33;
+  border-bottom: #275b33;
+  border-right: #275b33;
+  border-top: #275b33;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+}
+
+.deletebutton {
+  width: 90px;
+  height: 36px;
+  margin-right: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-radius: 30px;
+  background: #a3a5a3;
+  border-color: #a3a5a3;
+  border-left: #a3a5a3;
+  border-bottom: #a3a5a3;
+  border-right: #a3a5a3;
+  border-top: #a3a5a3;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(53, 52, 52);
+}

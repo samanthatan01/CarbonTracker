@@ -161,7 +161,7 @@ const Overlay = (props) => {
         <br />
         <div className="row">
           <div className="col-md-3"></div>
-          <div className="col-md-3">
+          <div className="label col-md-2">
             <strong>Date</strong>
           </div>
           <input
@@ -177,7 +177,7 @@ const Overlay = (props) => {
 
         <div className="row">
           <div className="col-md-3"></div>
-          <div className="col-md-3">
+          <div className="label col-md-2">
             <strong>Vehicle Make</strong>
           </div>
           <select
@@ -194,7 +194,7 @@ const Overlay = (props) => {
 
         <div className="row">
           <div className="col-md-3"></div>
-          <div className="col-md-3">
+          <div className="label col-md-2">
             <strong>Vehicle Model</strong>
           </div>
           <select
@@ -211,7 +211,7 @@ const Overlay = (props) => {
 
         <div className="row">
           <div className="col-md-3"></div>
-          <div className="col-md-3">
+          <div className="label col-md-2">
             <strong>Distance Travelled (km)</strong>
           </div>
           <input
@@ -223,16 +223,14 @@ const Overlay = (props) => {
           ></input>
           <div className="col-md-3"></div>
         </div>
-        <br />
 
-        <br />
-        <div className="row">
+        <div className="row centered">
           <div className="col-md-3"></div>
-          <button className="col-md-3" onClick={getUpdatedVehData}>
+          <button className="updatebutton col-md-3" onClick={getUpdatedVehData}>
             Update
           </button>
           <button
-            className="col-md-3"
+            className="deletebutton col-md-3"
             onClick={() => props.setShowUpdateModal(false)}
           >
             Cancel

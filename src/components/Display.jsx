@@ -1,18 +1,29 @@
 import React from "react";
 import Entries from "./Entries";
-import styles from "./Entries.module.css";
+// import styles from "./Entries.module.css";
+import "./styles.css";
 
 const Display = (props) => {
   // console.log(props.entries);
 
   return (
     <>
-      <div className={`row ${styles.entry}`}>
-        <div className="col-sm-2">Date</div>
-        <div className="col-sm-2">Vehicle</div>
-        <div className="col-sm-2">Model</div>
-        <div className="col-sm-2">{`Distance (km)`}</div>
-        <div className="col-sm-2">{`Est. Carbon Emission (kg)`}</div>
+      <div className="row entry">
+        <div className="col-sm-2">
+          <strong>Date</strong>
+        </div>
+        <div className="col-sm-2">
+          <strong>Vehicle</strong>
+        </div>
+        <div className="col-sm-2">
+          <strong>Model</strong>
+        </div>
+        <div className="col-sm-2">
+          <strong>Distance (km)</strong>
+        </div>
+        <div className="col-sm-2">
+          <strong>Carbon Emission (kg)</strong>
+        </div>
         <div className="col-sm-2"></div>
       </div>
 

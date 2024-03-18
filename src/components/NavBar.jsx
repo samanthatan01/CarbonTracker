@@ -24,7 +24,7 @@ const NavBar = () => {
               }}
               to="/member/list"
             >
-              Track My Emission
+              Track My Emissions
             </NavLink>
           </li>
         </ul>

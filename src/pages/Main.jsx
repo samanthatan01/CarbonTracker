@@ -16,7 +16,7 @@ const Main = () => {
           </h1>
           <br />
           <h5 className={`${styles.title}`}>
-            <strong>THE METHODOLOGY</strong>
+            <strong>THE METHODOLOGY BEHIND THE APP</strong>
           </h5>
           <br />
           <br />
@@ -27,7 +27,7 @@ const Main = () => {
             provide accurate estimates that developers can trust, each estimate
             type has a different carbon calculation that factors in best
             practices from GHG Protocol, the IPCC and country-specific agencies
-            such as the EPA.{" "}
+            such as the EPA.
           </p>
           <br />
           <p>
@@ -36,7 +36,7 @@ const Main = () => {
             transparent with our calculations and data sources so developers can
             assure their users that they are performing accurate emission
             estimates.
-          </p>{" "}
+          </p>
           <br />
           <NavLink className={`${styles.link}`} to="/member/list">
             START TRACKING EMISSION
