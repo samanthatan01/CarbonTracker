@@ -10,11 +10,12 @@
 
 .modal {
   position: fixed;
-  background: white;
-  top: 30vh;
+  background: #e0f1e0;
+  top: 20vh;
   bottom: 40vh;
   left: 10%;
   width: 80%;
+  height: 45%;
   z-index: 100;
   overflow: hidden;
 }

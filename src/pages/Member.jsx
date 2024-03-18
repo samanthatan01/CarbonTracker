@@ -165,6 +165,7 @@ const Member = () => {
                   date: date,
                   vehicle: data.data.attributes.vehicle_make,
                   vehModel: data.data.attributes.vehicle_model,
+                  vehMakeId: data.data.id,
                   vehModelId: data.data.attributes.vehicle_model_id,
                   distance_value: data.data.attributes.distance_value,
                   carbon_kg: data.data.attributes.carbon_kg,
@@ -288,7 +289,15 @@ const Member = () => {
           <br />
           <br />
           <div>
-            <Display entries={entries} getEntries={getEntries}></Display>
+            <Display
+              entries={entries}
+              getEntries={getEntries}
+              vehMakeId={vehMakeId}
+              vehMakeSelection={vehMakeSelection}
+              vehModelId={vehModelId}
+              vehModelSelection={vehModelSelection}
+              getVehicleModelData={getVehicleModelData}
+            ></Display>
           </div>
         </div>
 

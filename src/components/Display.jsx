@@ -3,7 +3,7 @@ import Entries from "./Entries";
 import styles from "./Entries.module.css";
 
 const Display = (props) => {
-  console.log(props.entries);
+  // console.log(props.entries);
 
   return (
     <>
@@ -21,15 +21,22 @@ const Display = (props) => {
       {props.entries?.records?.map((item) => {
         return (
           <Entries
-            id={item.id}
+            id={item.fields.id}
             date={item.fields.date}
             vehicle={item.fields.vehicle}
             vehModel={item.fields.vehModel}
-            vehModelId={item.fields.vehModelId}
+            vehMakeIdOfEntry={item.fields.vehMakeId}
+            vehModelIdOfEntry={item.fields.vehModelId}
             distance={item.fields.distance_value}
             unit={item.fields.distance_unit}
             carbon={item.fields.carbon_kg}
+            entries={props.entries}
             getEntries={props.getEntries}
+            vehMakeId={props.vehMakeId}
+            vehMakeSelection={props.vehMakeSelection}
+            vehModelId={props.vehModelId}
+            vehModelSelection={props.vehModelSelection}
+            getVehicleModelData={props.getVehicleModelData}
           />
         );
       })}
