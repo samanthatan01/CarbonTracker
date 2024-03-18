@@ -228,10 +228,10 @@ const Member = () => {
         <div className="row">
           <br />
           <div className="row">
-            <h3 style={{ color: "#77a677" }}>Carbon Emission Overview</h3>
+            <h3 style={{ color: "#35423b" }}>Carbon Emission Overview</h3>
             <br />
             <br />
-            <Overview></Overview>
+            <Overview entries={entries}></Overview>
           </div>
 
           <br />
@@ -249,7 +249,7 @@ const Member = () => {
             />
           </div>
 
-          <h3 style={{ color: "#77a677" }}>Log New Entry</h3>
+          <h3 style={{ color: "#35423b" }}>Log New Entry</h3>
           <br />
           <br />
           <div>
@@ -285,7 +285,7 @@ const Member = () => {
         <br />
 
         <div className="row">
-          <h3 style={{ color: "#77a677" }}>Past Entries</h3>
+          <h3 style={{ color: "#35423b" }}>Past Entries</h3>
           <br />
           <br />
           {/* {JSON.stringify(vehModelId)} */}

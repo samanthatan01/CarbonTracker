@@ -24,7 +24,7 @@ const NavBar = () => {
               }}
               to="/member/list"
             >
-              Login / Sign Up
+              Track My Emission
             </NavLink>
           </li>
         </ul>
