@@ -37,6 +37,19 @@ const Overview = (props) => {
         >{`${totalCarbon} KG`}</label>
       </div>
       <br />
+
+      <div className="row">
+        <p>
+          Explore emission reduction projects and learn more about carbon
+          offsets.
+        </p>
+        <br />
+        <br />
+        <a href="https://terrapass.com/product-category/individuals/">
+          <button className={`${styles.button}`}>Learn More</button>
+        </a>
+      </div>
+      <br />
     </div>
   );
 };

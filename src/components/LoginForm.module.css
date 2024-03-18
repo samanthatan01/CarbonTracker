@@ -1,5 +1,8 @@
 .label {
   text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .input {
@@ -21,4 +24,14 @@
   border-bottom: #67cb67;
   border-right: #67cb67;
   color: #ffffff;
+}
+
+.loginbutton:hover,
+.loginbutton:active,
+.loginbutton.active {
+  background-color: rgb(95, 95, 95);
+  border-color: rgb(95, 95, 95);
+  border-bottom: rgb(95, 95, 95);
+  border-right: rgb(95, 95, 95);
+  color: white;
 }

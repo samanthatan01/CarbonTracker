@@ -19,9 +19,10 @@
   width: 10rem;
 }
 .navbar a {
-  color: white;
-  font-family: sans-serif;
-  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 .navbar a:hover,

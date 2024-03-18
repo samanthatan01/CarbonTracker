@@ -19,6 +19,8 @@ const List = () => {
           </div>
           <br />
           <br />
+          <br />
+          <br />
           <div>
             <label className={`${styles.label} col-sm-1`}>Password</label>
             <input
@@ -38,7 +40,8 @@ const List = () => {
             </Link>
             <br />
             <br />
-            <label>Not an existing user? Create a new account here.</label>
+            <br />
+            <p>Not an existing user? Create a new account here.</p>
           </div>
         </div>
         <br />

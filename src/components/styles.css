@@ -93,3 +93,11 @@
   font-style: normal;
   color: rgb(53, 52, 52);
 }
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  color: rgb(61, 103, 75);
+  letter-spacing: 2px;
+}

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Form from "../components/Form";
 import Display from "../components/Display";
 import Overview from "../components/Overview";
+import "../components/styles.css";
 
 const Member = () => {
   // setting states, params and variables
@@ -249,7 +250,7 @@ const Member = () => {
             />
           </div>
           <br />
-          <h3 style={{ color: "#35423b" }}>Log New Entry</h3>
+          <h3 style={{ color: "#35423b" }}>New Entry</h3>
           <br />
           <br />
           <br />
@@ -282,11 +283,10 @@ const Member = () => {
             }}
           />
         </div>
-
         <br />
-
         <div className="row">
-          <h3 style={{ color: "#35423b" }}>Past Entries</h3>
+          <h3 style={{ color: "#35423b" }}>History</h3>
+
           <br />
           <br />
           {/* {JSON.stringify(vehModelId)} */}

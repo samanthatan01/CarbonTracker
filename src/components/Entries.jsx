@@ -32,11 +32,11 @@ const Entries = (props) => {
       )}
 
       <div className="row entry">
-        <div className="col-sm-2">{props.date}</div>
-        <div className="col-sm-2">{props.vehicle}</div>
-        <div className="col-sm-2">{props.vehModel}</div>
-        <div className="col-sm-2">{props.distance}</div>
-        <div className="col-sm-2">{props.carbon}</div>
+        <p className="col-sm-2">{props.date}</p>
+        <p className="col-sm-2">{props.vehicle}</p>
+        <p className="col-sm-2">{props.vehModel}</p>
+        <p className="col-sm-2">{props.distance}</p>
+        <p className="col-sm-2">{props.carbon}</p>
         <button
           className="updatebutton col-sm-1"
           onClick={() => setShowUpdateModal(true)}

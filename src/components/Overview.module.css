@@ -27,3 +27,20 @@
   font-style: normal;
   color: rgb(61, 103, 75);
 }
+
+.button {
+  width: 160px;
+  height: 36px;
+  margin-right: 16px;
+  border-radius: 30px;
+  background: #67cb67;
+  border-color: #67cb67;
+  border-left: #67cb67;
+  border-bottom: #67cb67;
+  border-right: #67cb67;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+}

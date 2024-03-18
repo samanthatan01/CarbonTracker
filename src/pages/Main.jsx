@@ -39,8 +39,9 @@ const Main = () => {
           </p>
           <br />
           <NavLink className={`${styles.link}`} to="/member/list">
-            START TRACKING EMISSION
+            CLICK TO START TRACKING EMISSION
           </NavLink>
+          <br />
           <br />
           <br />
         </div>
