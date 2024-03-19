@@ -5,7 +5,7 @@ import styles from "../components/main.module.css";
 const Main = () => {
   return (
     <>
-      <img src={bannerphoto} alt="pollution" />
+      <img className={`${styles.banner}`} src={bannerphoto} alt="pollution" />
       <br />
       <br />
       <div className="container">
