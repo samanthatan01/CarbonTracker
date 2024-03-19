@@ -220,8 +220,6 @@ const Member = () => {
     };
   }, []);
 
-  console.log(entries);
-
   return (
     <>
       <div className="container">
