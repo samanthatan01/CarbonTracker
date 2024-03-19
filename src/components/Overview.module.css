@@ -24,6 +24,7 @@
 
   font-family: "Roboto", sans-serif;
   font-weight: 700;
+  font-size: 22px;
   font-style: normal;
   color: rgb(61, 103, 75);
 }
@@ -43,4 +44,14 @@
   font-weight: 700;
   font-style: normal;
   color: rgb(255, 255, 255);
+}
+
+.button:hover,
+.button:active,
+.button.active {
+  background-color: #5aa65a;
+  border-color: #5aa65a;
+  border-bottom: #5aa65a;
+  border-right: #5aa65a;
+  color: white;
 }

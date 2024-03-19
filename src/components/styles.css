@@ -33,6 +33,16 @@
   color: rgb(255, 255, 255);
 }
 
+.clearbutton:hover,
+.clearbutton:active,
+.clearbutton.active {
+  background-color: #bd3d27;
+  border-color: #bd3d27;
+  border-bottom: #bd3d27;
+  border-right: #bd3d27;
+  color: white;
+}
+
 .submitbutton {
   width: 160px;
   height: 36px;
@@ -48,6 +58,16 @@
   font-weight: 700;
   font-style: normal;
   color: rgb(255, 255, 255);
+}
+
+.submitbutton:hover,
+.submitbutton:active,
+.submitbutton.active {
+  background-color: #5aa65a;
+  border-color: #5aa65a;
+  border-bottom: #5aa65a;
+  border-right: #5aa65a;
+  color: white;
 }
 
 .entry {
@@ -74,6 +94,16 @@
   color: rgb(255, 255, 255);
 }
 
+.updatebutton:hover,
+.updatebutton:active,
+.updatebutton.active {
+  background-color: #183b20;
+  border-color: #183b20;
+  border-bottom: #183b20;
+  border-right: #183b20;
+  color: white;
+}
+
 .deletebutton {
   width: 90px;
   height: 36px;
@@ -91,6 +121,16 @@
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-style: normal;
+  color: rgb(53, 52, 52);
+}
+
+.deletebutton:hover,
+.deletebutton:active,
+.deletebutton.active {
+  background-color: #787878;
+  border-color: #787878;
+  border-bottom: #787878;
+  border-right: #787878;
   color: rgb(53, 52, 52);
 }
 
