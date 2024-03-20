@@ -26,7 +26,7 @@ In the app, users will have an overview of their total mileage and carbon emissi
 - Log New Entry: Users are able to log a new entry by selecting their vehicle's make, model, distance travelled in km and the date of activity.
   ![log new entry - selecting vehicle make](src/screenshots/form-1.png)
 
----
+  ***
 
 ![log new entry - selecting vehicle model](src/screenshots/form-2.png)
 
@@ -44,7 +44,7 @@ In the app, users will have an overview of their total mileage and carbon emissi
 - Update Past Entry: Users are able to update their inputs or change their selection. Upon clicking update, the carbon emission will be recalculated and reflected on the app.
   ![update modal allowing users to change their input e.g changing the distance input](src/screenshots/update-entry.png)
 
----
+  ***
 
 ![latest changes are reflected on the app](src/screenshots/updated-entry.png)
 
