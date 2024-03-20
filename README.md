@@ -24,10 +24,13 @@ In the app, users will have an overview of their total mileage and carbon emissi
   ***
 
 - Log New Entry: Users are able to log a new entry by selecting their vehicle's make, model, distance travelled in km and the date of activity.
-  ![log new entry - selecting vehicle make](src/screenshots/form-1.png)
 
-  ***
+Using the Carbon Interface API, users are able to select from a wide range of vehicle make
+![log new entry - selecting vehicle make](src/screenshots/form-1.png)
 
+---
+
+Only upon selection of the vehicle's make, the vehicle model dropdown will render to display only the models associated with the selected make.
 ![log new entry - selecting vehicle model](src/screenshots/form-2.png)
 
 ---
@@ -56,6 +59,9 @@ In the app, users will have an overview of their total mileage and carbon emissi
 - Third-party public API: [Carbon Interface](https://docs.carboninterface.com/#/)
 
 # Getting Started
+
+Hierarchy and Dataflow of the app
+![hierarchy of app](src/screenshots/Hierarchy.png)
 
 # Next Steps
 
