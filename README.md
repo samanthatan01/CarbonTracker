@@ -75,3 +75,7 @@ Critical Phases of the Project Implementation
 - To expand the mode of transportation to include flight and shipping estimates
 - To build a functional user login page
 - To work on a functional DELETE button for the entries submitted
+
+# Citations
+
+-
