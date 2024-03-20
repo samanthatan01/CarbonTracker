@@ -50,13 +50,12 @@ In the app, users will have an overview of their total mileage and carbon emissi
 
 # Technologies Used
 
-- JavaScript
+- JavaScript (React.js)
 - HTML
 - CSS
+- Third-party public API: [Carbon Interface](https://docs.carboninterface.com/#/)
 
 # Getting Started
-
-[Click to Play Connect Four!](your deployment url here)
 
 # Next Steps
 
