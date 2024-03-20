@@ -8,8 +8,9 @@ In the app, users will have an overview of their total mileage and carbon emissi
 
 # Screenshot
 
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
+![first part of home page](src/screenshots/main-page-1.png)
+
+![second part of home page](src/screenshots/main-page-2.png)
 
 # Technologies Used
 
