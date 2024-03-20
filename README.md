@@ -53,17 +53,25 @@ Only upon selection of the vehicle's make, the vehicle model dropdown will rende
 
 # Technologies Used
 
-- JavaScript (React.js)
+- JavaScript
+- ReactJS, ReactDOM, React Router
 - HTML
 - CSS
 - Third-party public API: [Carbon Interface](https://docs.carboninterface.com/#/)
+- Airtable: used as a database for CRUD operations
 
 # Getting Started
 
-Hierarchy and Dataflow of the app
-![hierarchy of app](src/screenshots/Hierarchy.png)
+Critical Phases of the Project Implementation
+
+- Research and decide on the public APIs available
+- Create [User Stories](https://github.com/users/samanthatan01/projects/1) on github
+- Planning the hierarchy and dataflow of the app (refer to image below for the App's hierarchy)
+- Deployment
+  ![hierarchy of app](src/screenshots/Hierarchy.png)
 
 # Next Steps
 
-- Future enhancement one...
-- Future enhancement two...
+- To expand the mode of transportation to include flight and shipping estimates
+- To build a functional user login page
+- To work on a functional DELETE button for the entries submitted
