@@ -67,7 +67,6 @@ Critical Phases of the Project Implementation
 - Research and decide on the public APIs available
 - Create [User Stories](https://github.com/users/samanthatan01/projects/1) on github
 - Planning the hierarchy and dataflow of the app (refer to image below for the App's hierarchy)
-- Deployment
   ![hierarchy of app](src/screenshots/Hierarchy.png)
 
 # Next Steps
@@ -78,4 +77,5 @@ Critical Phases of the Project Implementation
 
 # Citations
 
--
+- Third-party public API: [Carbon Interface](https://docs.carboninterface.com/#/)
+- Banner image: [Akil Mazumder - Pexels](https://www.pexels.com/photo/person-holding-a-green-plant-1072824/)
